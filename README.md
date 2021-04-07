@@ -21,13 +21,15 @@ dependencies {
 ## `Docker 명령어`
 
 ```
-docker run -p 27017:27017 --name gyunny_mongo -d mong
+docker run -p 원하는포트:27017 --name 원하는이름 -d mongo
+ex) docker run -p 27017:27017 --name gyunny_mongo -d mongo
 ```
 
 MongoDB 이미지 다운 받기
 
 ```
-docker exec -i -t gyunny_mongo bash (MongoDB Bash 접속)
+docker exec -it -t 위에선만든이름 bash 
+ex) docker exec -i -t gyunny_mongo bash (MongoDB Bash 접속)
 mongo
 use test
 db.accounts.find({})
